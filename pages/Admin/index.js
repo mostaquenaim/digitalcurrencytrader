@@ -9,13 +9,13 @@ export default function SingIn() {
   
     <Header title="Sign in"></Header>
     <center>
-    <form action="./home">
+    <form action="Admin/home">
       <h1> Sign in </h1><br></br>
       Username/email <input type="text"></input><br></br>
       Password <input type="password"></input><br></br>
       <input type="submit"></input>
     </form>
-    <Link href="./signup">Register</Link>
+    <Link href="Admin/signup">Register</Link>
 </center>
     </>
   )

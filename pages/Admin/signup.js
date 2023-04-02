@@ -7,7 +7,7 @@ export default function SingUp() {
   
     <Header title="Registration"></Header>
     <center>
-    <form action="/">
+    <form action="./">
       <h1> Register </h1><br></br>
       Name <input type="text"></input><br></br>
       Password <input type="password"></input><br></br>

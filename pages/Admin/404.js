@@ -1,4 +1,4 @@
-import Header from "./component//header"
+import Header from "./component/header"
 
 export default function Custom404() {
     return (
