@@ -1,21 +1,22 @@
 import MyLayout from "./component/layout"
 import Header from "./component/header"
+import Link from "next/link"
 
-export default function Home() {
-  const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+
+export default function SingIn() {
   return (
     <>
   
-    <MyLayout title="Home"/>
-
-    <h1>Home Page</h1>
-    <h3>Loren Posem .....</h3>
-    <ul >
-        {names.map((name) => (
-          <li key={name}>{name}</li>
-        ))}
-      </ul>
-
+    <Header title="Sign in"></Header>
+    <center>
+    <form action="./home">
+      <h1> Sign in </h1><br></br>
+      Username/email <input type="text"></input><br></br>
+      Password <input type="password"></input><br></br>
+      <input type="submit"></input>
+    </form>
+    <Link href="./signup">Register</Link>
+</center>
     </>
   )
 }
