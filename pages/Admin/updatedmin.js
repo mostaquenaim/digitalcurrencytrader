@@ -72,7 +72,7 @@ export default function Updateadmin({data}) {
               <br></br>
               {/* name input */}
                       <label  >Name</label>
-                        <input type="text" id="name" defaultValue={parsedData.name} required=""
+                        <input type="text" id="name"  required=""
                             {...register('name', { required: true })}                
                                         />
 {errors.name &&
