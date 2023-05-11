@@ -38,7 +38,7 @@ export default function addnewadmin() {
 
         console.log(formData);
         try {
-            const response = await axios.post("http://localhost:3000/admin/signup",
+            const response = await axios.post("https://nestjs-production-9259.up.railway.app/admin/signup",
                 formData, {
                 headers: {
                     "Content-Type": "multipart/form-data"
@@ -165,7 +165,7 @@ export default function addnewadmin() {
                   
                   <label htmlFor="birthdate"  className="block font-bold mb-2">BirthDate</label>
                     <input
-                        type="text"
+                        type="date"
                         id="birthDate"   required="" className="border border-gray-300 rounded w-full px-3 py-2 focus:outline-none"
                         {...register('birthDate', { required: true,  })}
                                         />
