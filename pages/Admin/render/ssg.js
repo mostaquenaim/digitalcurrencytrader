@@ -1,6 +1,6 @@
 
 export default function SSG({ data }) {
-    
+  if(!data) return null
     return (
         <>
         <h1>This SSG request!</h1>

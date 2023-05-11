@@ -1,6 +1,6 @@
 
 export default function SSR({ data }) {
-    
+  if(!data) return null
     return (
         <>
         <h1>This SSR request!</h1>
