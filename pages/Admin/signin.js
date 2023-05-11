@@ -3,12 +3,6 @@ import axios from 'axios'
 import MyLayout from "./component/layout"
 import { useRouter } from 'next/router';
 import MyHeader from './component/header';
-import Link from "next/link"
-import SessionCheck from './component/sessioncheck';
-import LoggedCheck from './component/isloggedin';
-
-
-
 
 
 export default function SignIn() {
@@ -21,12 +15,11 @@ export default function SignIn() {
     event.preventDefault()
 
     try {
-      
       const response = await axios.post('http://localhost:3000/admin/signin', { email, password })
       console.log("res: "+response.data)
       
         sessionStorage.setItem('email', response.data);
-        router.push('/Admin/dashboard');
+        router.push('/admin/dashboard');
 
     } catch (error) {
         console.log("error22: "+error.message)
@@ -40,35 +33,28 @@ export default function SignIn() {
 
     return (
         <>
-        <LoggedCheck/>
             <MyHeader title="Sign in"/>
    
         <form onSubmit={handleSubmit}>
   
-  <center>
       <h2 >Sign In</h2>
         <label  >Email</label>
 
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}  /> <br></br>
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}  />
        
         <label  >Password</label>
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}  /><br></br>
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}  />
     
-       <button type="submit" >Sign In</button><br></br>
-
-       <Link href="Admin/signup">Register</Link>
-       
+       <button type="submit" >Sign In</button>
                 {error &&
                     
                     <p >{error}</p>
                     
                 }   
                 {/* {console.log("error22: "+error.message)} */}
-                </center>
           </form>
       
 
             </>
   )
 }
-
