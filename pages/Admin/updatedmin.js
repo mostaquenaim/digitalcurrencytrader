@@ -203,7 +203,7 @@ export default function Updateadmin({response}) {
         }
                 </p>}      
                <br></br>
-                          <button type="submit" >ssss</button>
+                          <button type="submit" >Submit</button>
                           
               </form>
        </center>
