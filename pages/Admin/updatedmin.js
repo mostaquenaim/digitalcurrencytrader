@@ -5,7 +5,11 @@ import MyLayout from "@/pages/Admin/component/layout"
 import { useRouter } from 'next/router'
 import SessionCheck from '@/pages/Admin/component/sessioncheck'
 
-export default function Updateadmin({data}) {
+export default function Updateadmin({response}) {
+
+    console.log(response)
+    console.log(response.data)
+
   const parsedData = data;
 
 

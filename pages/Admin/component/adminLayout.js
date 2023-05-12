@@ -53,7 +53,7 @@ export default function AdminLayout(props)
       
       router.push({
         pathname: '/Admin/updatedmin',
-        query: { data: response.data  },
+        query: { data: { response }   },
       });
     } catch (error) {
       console.error(error);
