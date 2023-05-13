@@ -38,7 +38,7 @@ export default function addnewadmin() {
 
         console.log(formData);
         try {
-            const response = await axios.post("https://nestjs-production-9259.up.railway.app/admin/signup",
+            const response = await axios.post("http://localhost:3000/admin/signup",
                 formData, {
                 headers: {
                     "Content-Type": "multipart/form-data"
@@ -57,9 +57,9 @@ export default function addnewadmin() {
         <>
             <SessionCheck />
             <MyLayout title="Add Admin" />
-            <div className="text-center">
-            <div className="pt-40 sm:ml-10">
-      <h1 className="text-2xl font-bold mb-4">Add New Admin</h1>
+            <div className="text-center bg-gray-200 min-h-screen">
+      <div className="pt-40 sm:ml-10">
+        <h1 className="text-2xl font-bold mb-4">Add New Admin</h1>
       <p>{success}</p>
 
       {/* Form start */}
@@ -78,7 +78,7 @@ export default function addnewadmin() {
           />
           {errors.name && <p className="text-red-500">Name is required</p>}
         </div>
-<br></br>
+
                 {/* username input */}
                 <label htmlFor="uname"  className="block font-bold mb-2">Username</label>
                                         <input type="text" id="uname" className="border border-gray-300 rounded w-full px-3 py-2 focus:outline-none"

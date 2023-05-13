@@ -1,0 +1,22 @@
+/* custom.css */
+
+/* Background styles */
+.bg-hero {
+    background-image: url("/path/to/background-image.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Form container styles */
+  .form-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .text-stroke-bright {
+    text-shadow: 1px 1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff, -1px -1px 0 #fff;
+  }
+  

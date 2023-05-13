@@ -53,7 +53,7 @@ export default function AdminLayout(props)
       
       router.push({
         pathname: '/Admin/updatedmin',
-        query: { data: { response }   },
+        query: { data: response.data    },
       });
     } catch (error) {
       console.error(error);
@@ -75,7 +75,8 @@ export default function AdminLayout(props)
         <Link href="./findadminbyname">Find admin by name</Link> | 
         <Link href="./findadminbymobile">Find admin by mobile</Link> | 
         <Link href="./addnewadmin">Add new admin</Link> | 
-        <button onClick={handleUpdateAdmin}>Update profile</button> | 
+        <Link href="./updateadmin">Update profile</Link> | 
+        {/* <button onClick={handleUpdateAdmin}>Update profile</button> |  */}
         <button onClick={handleSignOut}>Sign out</button>
     
         

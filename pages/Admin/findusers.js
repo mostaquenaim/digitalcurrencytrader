@@ -15,22 +15,42 @@ export default function FindUser({ data }) {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     // redirect to the same page with query params containing the input value
+
+
     router.push({
       pathname: 'findusers',
       query: { inputValue: inputValue }
     });
   }
 
+
   return (
     <>
-     <MyLayout />
-      <form onSubmit={handleFormSubmit}>
-        <input type="text" value={inputValue} onChange={handleInputChange} />
-        <button type="submit">Fetch Data</button>
+      <MyLayout />
+      <div className="text-center bg-gray-200 min-h-screen">
+      <div className="pt-40 sm:ml-10">
+        <h1 className="text-2xl font-bold mb-4">Find User</h1>
+      <form onSubmit={handleFormSubmit} className="mt-4">
+        <input
+          type="text"
+          value={inputValue}
+          onChange={handleInputChange}
+          className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <button
+          type="submit"
+          className="px-4 py-2 ml-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+        >
+          Fetch Data
+        </button>
       </form>
-      {data.status == null? 
-   <UserLayout data={data}/>
-      : data.status }
+      {data.status == null ? (
+        <UserLayout data={data} />
+      ) : (
+        <p className="mt-4 text-red-500">{data.status}</p>
+      )}
+      </div>
+      </div>
     </>
   );
 }
@@ -38,7 +58,7 @@ export default function FindUser({ data }) {
 export async function getServerSideProps({ query }) {
   const inputValue = query.inputValue;
   try {
-  const response = await axios.get('http://localhost:3000/admin/finduser/'+inputValue);
+  const response = await axios.get('http://localhost:3000/admin/findcustomer/'+inputValue);
   const data = await response.data;
 
   return {
