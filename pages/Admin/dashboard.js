@@ -3,13 +3,18 @@ import AdminLayout from "./component/adminLayout"
 import Header from "./component/header"
 import Session from "./component/session"
 import SessionCheck from "./component/sessioncheck"
+import DashBg from "./component/dashboardbg"
+import CoinDetails from "./component/coindetails"
 export default function Dashboard() {
     return (
       <>
       
       <SessionCheck/>
-      <AdminDrawer title="Dashboard"/>
+      
 
+      <AdminDrawer title="Dashboard"/>
+      <CoinDetails/>
+      <DashBg/>
       
       
 

@@ -8,6 +8,9 @@ export default function AdminDrawer(props) {
   return (
     <>
     <Header title={props.title} />
+
+    
+
    <aside
   id="logo-sidebar"
   className="fixed top-0 left-0 z-40 w-64 h-screen pt-10 transition-transform -translate-x-full bg-gray-900 border-r border-gray-800 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-center items-center"
@@ -83,7 +86,7 @@ export default function AdminDrawer(props) {
 {/* find admin start  */}
 <li>
   <Link
-    href="/Admin/findadmin"
+    href="/Admin/findadmins"
     className="flex items-center p-2 text-gray-100 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
   >
     <svg

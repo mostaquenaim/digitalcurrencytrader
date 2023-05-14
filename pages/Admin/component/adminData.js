@@ -1,7 +1,7 @@
 
 import Image from 'next/image'
 
-export default function AdminLayout({data})   
+export default function AdminData({data})   
 {
     if(!data) return null
     return(
