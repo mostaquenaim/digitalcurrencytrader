@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import axios from 'axios';
 import MyLayout from '@/pages/Admin/component/layout';
 import UserLayout from '@/pages/Admin/component/userdata';
+import AdminDrawer from './component/adminDrawer';
 
 export default function FindUser({ data }) {
   const [inputValue, setInputValue] = useState();
@@ -26,7 +27,7 @@ export default function FindUser({ data }) {
 
   return (
     <>
-      <MyLayout />
+      <AdminDrawer title="Find Customer" />
       <div className="text-center bg-gray-200 min-h-screen">
       <div className="pt-40 sm:ml-10">
         <h1 className="text-2xl font-bold mb-4">Find User</h1>

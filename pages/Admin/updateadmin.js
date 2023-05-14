@@ -6,6 +6,8 @@ import { useRouter } from 'next/router'
 import { useEffect } from 'react';
 import SessionCheck from '@/pages/Admin/component/sessioncheck'
 import MyFooter from './component/adminfooter';
+import AdminDrawer from './component/adminDrawer';
+
 
 export default function Updateadmin() {
 
@@ -88,7 +90,7 @@ export default function Updateadmin() {
     return (
         <>
             <SessionCheck />
-            <MyLayout title="Update Admin" />
+            <AdminDrawer title="Update Admin" />
             <div className="text-center bg-gray-200 min-h-screen">
       <div className="pt-40 sm:ml-10">
         <h1 className="text-2xl font-bold mb-4">Update profile</h1>

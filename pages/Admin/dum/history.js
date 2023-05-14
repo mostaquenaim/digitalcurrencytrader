@@ -1,5 +1,5 @@
-import MyLayout from "./component/layout"
-import Header from "./component/header"
+import MyLayout from "../component/layout"
+import Header from "../component/header"
 export default function History() {
     return (
       <>

@@ -1,4 +1,4 @@
-import Updateadmin from "./updateadmin";
+import Updateadmin from "../updateadmin";
 
 export default function Initialupdate() {
     const adminemail=sessionStorage.getItem('email')

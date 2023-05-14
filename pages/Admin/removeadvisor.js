@@ -3,10 +3,14 @@ import { useRouter } from 'next/router';
 import axios from 'axios';
 import MyLayout from '@/pages/Admin/component/layout';
 import UserLayout from '@/pages/Admin/component/userdata';
-import AdvisorLayout from './component/advisorData';
+import AdminData from './component/adminData';
+import RemoveAdminData from './component/removeadmindata';
+import RemoveCustData from './component/removecustdata';
+import RemoveAdvisorData from './component/removeadvdata';
 import AdminDrawer from './component/adminDrawer';
 
-export default function FindAdvisor({ data }) {
+
+export default function RemoveAdvisor({ data }) {
   const [inputValue, setInputValue] = useState();
   const router = useRouter();
 
@@ -17,18 +21,21 @@ export default function FindAdvisor({ data }) {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     // redirect to the same page with query params containing the input value
+
+
     router.push({
-      pathname: 'findadvisors',
+      pathname: 'removeadvisor',
       query: { inputValue: inputValue }
     });
   }
 
+
   return (
     <>
-      <AdminDrawer title="Find Advisor" />
+      <AdminDrawer title="Remove Advisor" />
       <div className="text-center bg-gray-200 min-h-screen">
       <div className="pt-40 sm:ml-10">
-        <h1 className="text-2xl font-bold mb-4">Find advisor by id</h1>
+        <h1 className="text-2xl font-bold mb-4">Find advisor(by id) to remove</h1>
       <form onSubmit={handleFormSubmit} className="mt-4">
         <input
           type="text"
@@ -44,7 +51,7 @@ export default function FindAdvisor({ data }) {
         </button>
       </form>
       {data.status == null ? (
-        <AdvisorLayout data={data} />
+        <RemoveAdvisorData data={data} />
       ) : (
         <p className="mt-4 text-red-500">{data.status}</p>
       )}

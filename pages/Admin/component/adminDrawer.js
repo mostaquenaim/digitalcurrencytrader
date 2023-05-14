@@ -1,21 +1,59 @@
-import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import Header from "./header"
-
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import axios from 'axios'
+import { useRouter } from 'next/router';
 
 export default function AdminDrawer(props) {
+
+  const [email, setEmail] = useState(null);
+      const router = useRouter();
+      
+    useEffect(() => {
+        if (typeof window !== 'undefined')// checks if the code is running on the client-side and not on the server-side.
+        {
+            const session = sessionStorage.getItem('email');
+            if (session) {
+              setEmail(session);
+             
+            }          
+        }
+     
+    }, []);
+
+    const handleSignOut = async (event) => {
+        event.preventDefault();
+        try {
+            const response = await axios.get('http://localhost:3000/admin/logout')
+            console.log(response.data)
+            sessionStorage.removeItem('email');
+            setEmail(null);
+            router.push('/Admin');
+          } catch (error) {
+            console.error(error)
+          }
+    
+  };
+
   return (
     <>
     <Header title={props.title} />
 
-    
+    <div>
+  <div className="flex justify-end p-4">
+  <Link
+                href="/Admin/viewprofile"> <button className="px-2 py-1 text-white bg-gray-800 rounded-md mr-2">Profile</button> </Link>
+    <button className="px-2 py-1 text-white bg-red-500 rounded-md" onClick={handleSignOut}>Sign Out</button>
+  </div>
 
    <aside
   id="logo-sidebar"
   className="fixed top-0 left-0 z-40 w-64 h-screen pt-10 transition-transform -translate-x-full bg-gray-900 border-r border-gray-800 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-center items-center"
   aria-label="Sidebar"
 >
+
+<Link href="./dashboard">
   <h1 className="text-white text-4xl font-bold mb-6">
     <span className="text-yellow-400" style={{ textShadow: '1px 1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff, -1px -1px 0 #fff' }}>
       Admin
@@ -24,7 +62,7 @@ export default function AdminDrawer(props) {
       Panel
     </span>
   </h1>
-
+</Link>
 
 
        <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
@@ -113,7 +151,7 @@ export default function AdminDrawer(props) {
 {/* all admins start  */}
 <li>
   <Link
-    href="/Admin/alladmins"
+    href="/Admin/getadmins"
     className="flex items-center p-2 text-gray-100 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
   >
     <svg
@@ -165,7 +203,7 @@ export default function AdminDrawer(props) {
 
             <li>
               <Link
-                href="/Admin/getusers"
+                href="/Admin/removecust"
                 className="flex items-center p-2 text-gray-100 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   <svg
@@ -191,7 +229,7 @@ export default function AdminDrawer(props) {
               {/* remove customer start  */}
               <li>
   <Link
-    href="/Admin/alladmins"
+    href="/Admin/getusers"
     className="flex items-center p-2 text-gray-100 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
   >
     <svg
@@ -209,7 +247,7 @@ export default function AdminDrawer(props) {
       ></path>
     </svg>
     <span className="flex-1 ml-3 whitespace-nowrap">
-      All Admins
+      All Customers
     </span>
   </Link>
 </li>
@@ -217,7 +255,7 @@ export default function AdminDrawer(props) {
 {/* find advisor start  */}
 <li>
   <Link
-    href="/Admin/findadvisor"
+    href="/Admin/findadvisors"
     className="flex items-center p-2 text-gray-100 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
   >
     <svg
@@ -243,7 +281,7 @@ export default function AdminDrawer(props) {
 
 <li>
   <Link
-    href="/Admin/alladvisors"
+    href="/Admin/getadvisors"
     className="flex items-center p-2 text-gray-100 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
   >
     <svg
@@ -372,6 +410,7 @@ export default function AdminDrawer(props) {
             </ul>
           </div>
         </aside>
+        </div>
       </>
     );
   }

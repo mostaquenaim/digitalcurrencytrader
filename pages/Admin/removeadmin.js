@@ -5,6 +5,7 @@ import MyLayout from '@/pages/Admin/component/layout';
 import UserLayout from '@/pages/Admin/component/userdata';
 import AdminData from './component/adminData';
 import RemoveAdminData from './component/removeadmindata';
+import AdminDrawer from './component/adminDrawer';
 
 export default function RemoveAdmin({ data }) {
   const [inputValue, setInputValue] = useState();
@@ -28,7 +29,7 @@ export default function RemoveAdmin({ data }) {
 
   return (
     <>
-      <MyLayout />
+      <AdminDrawer title="Remove Admin" />
       <div className="text-center bg-gray-200 min-h-screen">
       <div className="pt-40 sm:ml-10">
         <h1 className="text-2xl font-bold mb-4">Find admin to remove</h1>

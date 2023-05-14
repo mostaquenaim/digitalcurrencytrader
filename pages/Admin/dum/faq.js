@@ -1,4 +1,4 @@
-import MyLayout from "./component/layout"
+import MyLayout from "../component/layout"
 
 export default function FAQ() {
     return (

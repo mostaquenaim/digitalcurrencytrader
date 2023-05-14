@@ -5,6 +5,7 @@ import MyLayout from "@/pages/Admin/component/layout"
 import { useRouter } from 'next/router'
 import SessionCheck from '@/pages/Admin/component/sessioncheck'
 import MyFooter from './component/adminfooter';
+import AdminDrawer from './component/adminDrawer';
 
 export default function addnewadmin() {
     const router = useRouter();
@@ -56,7 +57,7 @@ export default function addnewadmin() {
     return (
         <>
             <SessionCheck />
-            <MyLayout title="Add Admin" />
+            <AdminDrawer title="Add Admin" />
             <div className="text-center bg-gray-200 min-h-screen">
       <div className="pt-40 sm:ml-10">
         <h1 className="text-2xl font-bold mb-4">Add New Admin</h1>
