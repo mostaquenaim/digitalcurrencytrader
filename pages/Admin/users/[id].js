@@ -2,12 +2,13 @@ import MyLayout from "@/pages/Admin/component/layout"
 import Image from "next/image";
 import axios from "axios";
 import { useRouter } from 'next/router'
+import MyHeader from "../component/header";
 
 export default function AdminProfile({ data } ) {
 const router = useRouter();
     return (
       <>
-      <MyLayout title="User"/>
+<MyHeader title="Customer details"/>   
    
 
       <h1>Name: {data.name}</h1>
