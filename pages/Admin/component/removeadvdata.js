@@ -1,54 +1,39 @@
+
 import Image from 'next/image'
-import axios from 'axios'
-import { useState } from "react"
 
+export default function RemoveAdvisorData({data})   
+{
+    if(!data) return null
 
-export default function RemoveAdvisorData({ data }) {
-
-
-    const [email, setEmail] =useState("")
     const [success, setSuccess] = useState('')
 
-
-  const handleButtonSubmit = async () => {
-    try {
-    //   await axios.delete('https://nestjs-production-0acd.up.railway.app/admin/deleteAdminByEmail', {
-    //     data: { email: data.email },
-    //   });
-    console.log(data)
-        setEmail(data.email)
-        console.log(email)
-
-        const result = await axios.delete('https://nestjs-production-0acd.up.railway.app/admin/deleteAdv', {
-            params: { email: data.email }, 
-          });
-
-          if(result) {
-            setSuccess("Advisor deleted")
-          }
-
+    const handleButtonSubmit = async () => {
+        try {
+       
+    
+            const result = await axios.delete('https://nestjs-production-0acd.up.railway.app/admin/deleteAdv', {
+                params: { email: data.Email }, 
+              });
+    
+              if(result) {
+                setSuccess("Advisor deleted")
+              }
+    
+            
         
-    
-    } catch (error) {
-      console.error('Error deleting advisor:', error);
-      // Handle error cases
-    }
-  };
+        } catch (error) {
+          console.error('Error deleting advisor:', error);
+          
+        }
+      };
 
-//   const adminemail=sessionStorage.getItem('email')
-//         setEmail(adminemail)
-
-//         const result = await axios.get(`https://nestjs-production-0acd.up.railway.app/admin/profile`, {
-//             params: { email: adminemail }, 
-//           });
-    
-//         setUser(result.data);
-
-  return (
-    <>
+    return(
+      <>
 
       <div className="flex flex-col items-center">
-    <p className="text-red-500 font-bold">{success}</p>
+        
+
+      <p className="text-red-500 font-bold">{success}</p>
 
         <div className="w-48 h-48 rounded-full overflow-hidden shadow-lg">
 
@@ -65,5 +50,6 @@ export default function RemoveAdvisorData({ data }) {
         </button>
       </div>
     </>
-  );
+    )
 }
+

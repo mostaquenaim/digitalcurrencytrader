@@ -5,6 +5,8 @@ export default function RemoveAdminData({data})
 {
     if(!data) return null
 
+    const [success, setSuccess] = useState('')
+
     const handleButtonSubmit = async () => {
         try {
        
@@ -29,6 +31,8 @@ export default function RemoveAdminData({data})
       <>
 
       <div className="flex flex-col items-center">
+    <p className="text-red-500 font-bold">{success}</p>
+
 
         <div className="w-48 h-48 rounded-full overflow-hidden shadow-lg">
 

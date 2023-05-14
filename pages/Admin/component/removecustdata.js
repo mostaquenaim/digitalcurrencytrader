@@ -5,19 +5,14 @@ import { useState } from "react"
 
 export default function RemoveCustData({ data }) {
 
+    if(!data) return null
+    
 
-    const [email, setEmail] =useState("")
     const [success, setSuccess] = useState('')
 
 
   const handleButtonSubmit = async () => {
     try {
-    //   await axios.delete('https://nestjs-production-0acd.up.railway.app/admin/deleteAdminByEmail', {
-    //     data: { email: data.email },
-    //   });
-    console.log(data)
-        setEmail(data.email)
-        console.log(email)
 
         const result = await axios.delete('https://nestjs-production-0acd.up.railway.app/admin/deleteCus', {
             params: { email: data.email }, 
@@ -31,18 +26,9 @@ export default function RemoveCustData({ data }) {
     
     } catch (error) {
       console.error('Error deleting admin:', error);
-      // Handle error cases
     }
   };
 
-//   const adminemail=sessionStorage.getItem('email')
-//         setEmail(adminemail)
-
-//         const result = await axios.get(`https://nestjs-production-0acd.up.railway.app/admin/profile`, {
-//             params: { email: adminemail }, 
-//           });
-    
-//         setUser(result.data);
 
   return (
     <>
