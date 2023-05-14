@@ -12,14 +12,14 @@ export default function RemoveCustData({ data }) {
 
   const handleButtonSubmit = async () => {
     try {
-    //   await axios.delete('http://localhost:3000/admin/deleteAdminByEmail', {
+    //   await axios.delete('https://nestjs-production-0acd.up.railway.app/admin/deleteAdminByEmail', {
     //     data: { email: data.email },
     //   });
     console.log(data)
         setEmail(data.email)
         console.log(email)
 
-        const result = await axios.delete('http://localhost:3000/admin/deleteCus', {
+        const result = await axios.delete('https://nestjs-production-0acd.up.railway.app/admin/deleteCus', {
             params: { email: data.email }, 
           });
 
@@ -38,7 +38,7 @@ export default function RemoveCustData({ data }) {
 //   const adminemail=sessionStorage.getItem('email')
 //         setEmail(adminemail)
 
-//         const result = await axios.get(`http://localhost:3000/admin/profile`, {
+//         const result = await axios.get(`https://nestjs-production-0acd.up.railway.app/admin/profile`, {
 //             params: { email: adminemail }, 
 //           });
     
@@ -52,7 +52,7 @@ export default function RemoveCustData({ data }) {
 
         <div className="w-48 h-48 rounded-full overflow-hidden shadow-lg">
 
-          <Image src={`http:/localhost:3000/customer/getcustomerimage/${data.filename}`} alt="me" width="150" height="150" />
+          <Image src={`https://nestjs-production-0acd.up.railway.app/customer/getcustomerimage/${data.filename}`} alt="me" width="150" height="150" />
         </div>
         <h1 className="text-3xl font-bold mb-4">Name: {data.name}</h1>
         <h1 className="text-3xl font-bold mb-4">Email: {data.email}</h1>

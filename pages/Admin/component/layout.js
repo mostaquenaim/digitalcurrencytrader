@@ -20,7 +20,7 @@ export default function MyLayout(props) {
   const handleSignOut = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.get('http://localhost:3000/admin/logout')
+      const response = await axios.get('https://nestjs-production-0acd.up.railway.app/admin/logout')
       console.log(response.data)
       sessionStorage.removeItem('email');
       setEmail(null);

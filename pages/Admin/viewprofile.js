@@ -34,7 +34,7 @@ export default function viewprofile() {
         const adminemail=sessionStorage.getItem('email')
         setEmail(adminemail)
 
-        const result = await axios.get(`http://localhost:3000/admin/profile`, {
+        const result = await axios.get(`https://nestjs-production-0acd.up.railway.app/admin/profile`, {
             params: { email: adminemail }, 
           });
     
@@ -153,7 +153,7 @@ export default function viewprofile() {
 // export async function getServerSideProps(context) {
     
 //        console.log(context)
-//     const response = await axios.get('http://localhost:3000/admin/profile', {
+//     const response = await axios.get('https://nestjs-production-0acd.up.railway.app/admin/profile', {
 //         params: { email: context.email }, 
 //       });
 

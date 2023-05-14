@@ -32,7 +32,7 @@ export default function Updateadmin() {
         const adminemail=sessionStorage.getItem('email')
         setEmail(adminemail)
 
-        const result = await axios.get(`http://localhost:3000/admin/profile`, {
+        const result = await axios.get(`https://nestjs-production-0acd.up.railway.app/admin/profile`, {
             params: { email: adminemail }, 
           });
     
@@ -72,7 +72,7 @@ export default function Updateadmin() {
 
         console.log(formData);
         try {
-            const response = await axios.put("http://localhost:3000/admin/updateadmin",
+            const response = await axios.put("https://nestjs-production-0acd.up.railway.app/admin/updateadmin",
                 formData, {
                 headers: {
                     "Content-Type": "multipart/form-data"
@@ -256,7 +256,7 @@ export default function Updateadmin() {
 // export async function getServerSideProps(context) {
     
 //        console.log(context)
-//     const response = await axios.get('http://localhost:3000/admin/profile', {
+//     const response = await axios.get('https://nestjs-production-0acd.up.railway.app/admin/profile', {
 //         params: { email: context.email }, 
 //       });
 

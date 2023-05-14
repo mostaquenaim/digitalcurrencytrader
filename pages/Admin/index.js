@@ -22,7 +22,7 @@ export default function SignIn() {
 
     try {
       
-      const response = await axios.post('http://localhost:3000/admin/signin', { email, password })
+      const response = await axios.post('https://nestjs-production-0acd.up.railway.app/admin/signin', { email, password })
       console.log("res: "+response.data)
       
         sessionStorage.setItem('email', response.data);

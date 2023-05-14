@@ -57,7 +57,7 @@ export default function FindAdmin({ data }) {
 export async function getServerSideProps({ query }) {
   const inputValue = query.inputValue;
   try {
-  const response = await axios.get('http://localhost:3000/admin/findadmin/'+inputValue);
+  const response = await axios.get('https://nestjs-production-0acd.up.railway.app/admin/findadmin/'+inputValue);
   const data = await response.data;
 
   return {

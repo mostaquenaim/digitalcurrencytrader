@@ -39,7 +39,7 @@ export default function addnewadmin() {
 
         console.log(formData);
         try {
-            const response = await axios.post("http://localhost:3000/admin/signup",
+            const response = await axios.post("https://nestjs-production-0acd.up.railway.app/admin/signup",
                 formData, {
                 headers: {
                     "Content-Type": "multipart/form-data"

@@ -55,7 +55,7 @@ export default function GetAdmins({ data }) {
   
  export async function getServerSideProps() {
  
-      const response = await axios.get('http://localhost:3000/admin/index');
+      const response = await axios.get('https://nestjs-production-0acd.up.railway.app/admin/index');
       const data = await response.data;
     
   return { props: { data } }

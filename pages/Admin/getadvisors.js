@@ -55,7 +55,7 @@ export default function GetAdvisors({ data }) {
   
  export async function getServerSideProps() {
  
-      const response = await axios.get('http://localhost:3000/admin/getadvisors');
+      const response = await axios.get('https://nestjs-production-0acd.up.railway.app/admin/getadvisors');
       const data = await response.data;
     
   return { props: { data } }

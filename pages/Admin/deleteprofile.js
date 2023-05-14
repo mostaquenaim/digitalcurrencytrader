@@ -15,13 +15,13 @@ export default function DeleteProfile() {
         const adminemail=sessionStorage.getItem('email')
         
     
-            const result = await axios.delete('http://localhost:3000/admin/deleteAdminByEmail', {
+            const result = await axios.delete('https://nestjs-production-0acd.up.railway.app/admin/deleteAdminByEmail', {
                 params: { email: adminemail }, 
               });
     
               if(result) {
         try {
-            const response = await axios.get('http://localhost:3000/admin/logout')
+            const response = await axios.get('https://nestjs-production-0acd.up.railway.app/admin/logout')
             console.log(response.data)
             sessionStorage.removeItem('email');
             router.push('/Admin');

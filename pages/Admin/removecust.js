@@ -62,7 +62,7 @@ export default function RemoveCust({ data }) {
 export async function getServerSideProps({ query }) {
   const inputValue = query.inputValue;
   try {
-  const response = await axios.get('http://localhost:3000/admin/findcustomer/'+inputValue);
+  const response = await axios.get('https://nestjs-production-0acd.up.railway.app/admin/findcustomer/'+inputValue);
   const data = await response.data;
 
   return {

@@ -14,7 +14,7 @@ export default function viewDesc({ data }) {
   
  export async function getServerSideProps() {
  
-      const response = await axios.get('http://localhost:3000/admin/viewDesc');
+      const response = await axios.get('https://nestjs-production-0acd.up.railway.app/admin/viewDesc');
       const data = await response.data;
     
   return { props: { data } }

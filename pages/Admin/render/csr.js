@@ -5,7 +5,7 @@ export default function CSRPage() {
   const [data, setData] = React.useState([])
   useEffect(() => {
     const getData = async () => {
-      const response = await fetch('http://localhost:3000/Admin/index');
+      const response = await fetch('https://nestjs-production-0acd.up.railway.app/Admin/index');
       const data = await response.json();
       setData(data);
     }
